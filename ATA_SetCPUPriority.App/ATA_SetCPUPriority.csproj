@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <StartupObject>ATA_SetCPUPriority.Program</StartupObject>
+    <ApplicationIcon>OttoStudio.ico</ApplicationIcon>
+    <Copyright>Atacan Çelikkol, https://github.com/Atacan-Celikkol</Copyright>
+    <PackageProjectUrl>https://github.com/Atacan-Celikkol/ATA_SetCPUPriority</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Atacan-Celikkol/ATA_SetCPUPriority</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="OttoStudio.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ATA_SetCPUPriority.Services\ATA_SetCPUPriority.Services.csproj" />
+  </ItemGroup>
+
+</Project>
