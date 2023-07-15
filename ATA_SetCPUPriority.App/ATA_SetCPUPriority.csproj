@@ -13,6 +13,10 @@
     <RepositoryUrl>https://github.com/Atacan-Celikkol/ATA_SetCPUPriority</RepositoryUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Include="OttoStudio.ico" />
   </ItemGroup>

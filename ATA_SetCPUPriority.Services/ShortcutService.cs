@@ -1,15 +1,9 @@
-﻿// ... [your existing import statements] ...
-
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace ATA_SetCPUPriority.Services;
 
 public class ShortcutService : IShortcutService
 {
-    // Add your existing shortcut-related code here, 
-    // refactoring it into the method defined in IShortcutService.
-    // Make sure to add try/catch blocks for error handling.
-
     public void CreateUninstallShortcut()
     {
         string shortcutPath = Path.Combine(Environment.CurrentDirectory, "Uninstall.lnk");
@@ -20,7 +14,7 @@ public class ShortcutService : IShortcutService
 
             var shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(shortcutPath);
 
-            shortcut.TargetPath = Assembly.GetExecutingAssembly().Location.Replace(".dll", ".exe");
+            shortcut.TargetPath = Path.GetFullPath(AppDomain.CurrentDomain.FriendlyName) + ".exe";
             shortcut.Arguments = "uninstall";
             shortcut.Description = "Uninstall ATA_SetCPUPriority";
 
