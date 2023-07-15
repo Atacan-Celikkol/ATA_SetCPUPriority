@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATA_SetCPUPriority", "ATA_SetCPUPriority.App\ATA_SetCPUPriority.csproj", "{648DEAF0-0E01-4B79-8189-9A13690FD3AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATA_SetCPUPriority.App", "ATA_SetCPUPriority.App\ATA_SetCPUPriority.App.csproj", "{648DEAF0-0E01-4B79-8189-9A13690FD3AB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATA_SetCPUPriority.Services", "ATA_SetCPUPriority.Services\ATA_SetCPUPriority.Services.csproj", "{CD27661F-2A08-491F-8079-564695342589}"
 EndProject

@@ -1,4 +1,5 @@
-﻿using ATA_SetCPUPriority.Services;
+﻿using ATA.Windows.MessageBox;
+using ATA_SetCPUPriority.Services;
 using System.Runtime.Versioning;
 
 namespace ATA_SetCPUPriority;
@@ -6,7 +7,6 @@ namespace ATA_SetCPUPriority;
 [SupportedOSPlatform("windows")]
 class Program
 {
-    private static readonly MessageBoxService messageBoxService = new();
     private static readonly RegistryService registryService = new();
     private static readonly ShortcutService shortcutService = new();
 
@@ -37,7 +37,7 @@ class Program
 
     private static void HandleInstall()
     {
-        var result = messageBoxService.Show(
+        var result = MessageBox.Show(
             text: "Right-click menu will be created; do you accept it?",
             caption: "Welcome!",
             buttons: MessageBoxButtons.YesNo);
@@ -49,14 +49,14 @@ class Program
                 registryService.InstallContextMenu();
                 shortcutService.CreateUninstallShortcut();
 
-                messageBoxService.Show(
+                MessageBox.Show(
                     text: $"{programName} successfully installed!",
                     caption: "Success!",
                     icon: MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
-                messageBoxService.Show(
+                MessageBox.Show(
                     text: e.Message,
                     caption: "Error!",
                     icon: MessageBoxIcon.Error);
@@ -66,7 +66,7 @@ class Program
 
     private static void HandleUninstall()
     {
-        var result = messageBoxService.Show(
+        var result = MessageBox.Show(
             text: $"Are you sure to uninstall {programName} from the context menu?",
             caption: "Uninstall",
             buttons: MessageBoxButtons.YesNo);
@@ -76,14 +76,14 @@ class Program
             try
             {
                 registryService.UninstallContextMenu();
-                messageBoxService.Show(
+                MessageBox.Show(
                     text: $"{programName} successfully uninstalled!",
                     caption: "Success!",
                     icon: MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
-                messageBoxService.Show(
+                MessageBox.Show(
                     text: e.Message,
                     caption: "Error!",
                     icon: MessageBoxIcon.Error);
@@ -97,7 +97,7 @@ class Program
 
         registryService.SetPriority(programName, priority);
 
-        messageBoxService.Show(
+        MessageBox.Show(
             text: $"CPU priority successfully set to {priorityName} for {programName}",
             caption: "Success!",
             icon: MessageBoxIcon.Information);

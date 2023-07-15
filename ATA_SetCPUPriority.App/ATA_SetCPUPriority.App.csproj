@@ -25,4 +25,8 @@
     <ProjectReference Include="..\ATA_SetCPUPriority.Services\ATA_SetCPUPriority.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ATA.Windows.MessageBox" Version="1.0.2" />
+  </ItemGroup>
+
 </Project>
